@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	body{
+		font-family: verdana;
+	}
+	div{
+		width: 50%;
+		margin: 30px auto;
+		padding: 40px;
+		border: solid 3px black;
+		border-radius: 20px;
+		text-align:center;
+		background: lightgrey;
+	}
+	button{
+		margin: 30px;
+		padding: 10px;
+		font-family: verdana;
+	}
+	.rojo{
+		color: red;
+	}
+	.azul{
+		color: blue;
+	}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script> 
+	$(document).ready(function(){
+		$("#boton_1").click(function(){
+			$("div").remove();
+		});
+		$("#boton_2").click(function(){
+			$("p").empty();
+		});
+		$("#boton_3").click(function(){
+			$("p").remove(".rojo");
+		});
+		$("#boton_4").click(function(){
+			$("p").remove(".rojo, .azul");
+		});
+	});
+</script> 
+</head>
+<body>
+
+<div>
+	<p>Elemento sin clase</p>
+	<p class="azul">Elemento con clase "Azul"</p>
+	<p class="rojo">Elementos con clase "rojo"</p>
+	<p class="rojo">Otro elemento con clase "rojo"</p>
+</div>
+
+<center>
+<button id="boton_1">Remover</button>
+<button id="boton_2">Vaciar</button>
+<button id="boton_3">Remover Rojo</button>
+<button id="boton_4">Remover Rojo y Azul</button>
+</center>
+
+</body>
+</html>
+ 

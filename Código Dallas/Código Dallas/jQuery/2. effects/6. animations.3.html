@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	div{
+	background:steelblue;
+	height:200px; width:100px;
+	position:relative;
+	margin: 30px;;
+	}
+	button{
+		margin: 30px;
+		padding: 10px;
+		font-family: verdana;
+	}
+	p{
+		padding-top: 15px;
+		padding-left: 30px;
+		font-family: verdana;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+    $("button").click(function(){
+        $("div").animate({height:"toggle"});
+    });
+});
+</script> 
+</head>
+<body>
+
+<p>Toggle</p>
+
+<button>Animar</button>
+
+<div></div>
+
+</body>
+</html>
+ 

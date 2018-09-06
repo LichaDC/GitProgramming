@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	div{
+		margin:0px auto;
+		width:80px;height:80px;
+		color: ghostwhite;
+		text-align: center;
+	}
+	p{
+		padding-top: 35%;
+		font-family: verdana;
+	}
+	button{
+		margin: 10px;
+		margin-right: 5px;
+		padding: 10px;
+		font-family: verdana;
+	}
+	#caja_1{
+		background-color:gold;
+	}
+	#caja_2{
+		background-color:orange;
+	}
+	#caja_3{
+		background-color:orangered;
+	}
+	#caja_4{
+		background-color:tomato;
+	}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	$("#desaparecer").click(function(){	
+		$("#caja_1").fadeOut(2000); 
+		$("#caja_2").fadeOut("slow"); //600ms
+		$("#caja_3").fadeOut(); //400ms - Es lo mismo no escribir nada que escribir "normal"
+		$("#caja_4").fadeOut("fast"); //200ms
+	});
+	$("#aparecer").click(function(){
+		$("#caja_1").fadeIn(2000);
+		$("#caja_2").fadeIn("slow");
+		$("#caja_3").fadeIn("normal");
+		$("#caja_4").fadeIn("fast");
+	});
+});
+</script>
+
+</head>
+<body>
+
+	<button id="desaparecer">Desaparecer</button>
+	<button id="aparecer">Aparecer</button>
+
+	<div id="caja_1"><p>2000</p></div>
+	<div id="caja_2"><p>Slow</p></div>
+	<div id="caja_3"><p>normal</p></div>
+	<div id="caja_4"><p>fast</p></div>
+
+</body>
+</html>

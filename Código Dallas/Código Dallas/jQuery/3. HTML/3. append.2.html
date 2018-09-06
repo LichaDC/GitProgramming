@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	body{
+		font-family: verdana;
+	}
+	div{
+		width: 1000px; height: 50%;
+		margin: 30px auto;
+		padding: 40px;
+		border: solid 3px black;
+		border-radius: 20px;
+		text-align:center;
+		background: lightgrey;
+	}
+	button{
+		margin: 30px;
+		padding: 10px;
+		font-family: verdana;
+	}
+	h2{
+		text-align: center;
+	}
+	li{
+		padding-bottom: 10px;
+		list-style-position: inside;
+	}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script> 
+	$(document).ready(function(){
+		$("#boton_1").click(function(){
+			$("ul").append($('#nombre').val());
+		});
+	});
+</script> 
+</head>
+<body>
+
+<h2>Agreamos datos con la función Append</h2>
+
+<div>
+	<ul>
+		<li>lisandro@gmail.com</li>
+		<li>manuel@gmail.com</li>
+		<li>joaquin@gmail.com</li>
+	</ul>
+	<p>Nombre: <input type="text" id="nombre"></p>
+	<button id="boton_1">Agregar Nuevo</button>
+</div>
+
+</body>
+</html>
+ 

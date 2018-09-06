@@ -1,0 +1,2 @@
+4) Generalizar problema de la deuda para clientes indefinidos
+5) Analizar en una lista indefinida si una lista está ordenada de menor a mayor usando el mientras

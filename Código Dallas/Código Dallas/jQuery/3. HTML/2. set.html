@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	body{
+		font-family: verdana;
+	}
+	div{
+		width: 1000px; height: 50%;
+		margin: 30px auto;
+		padding: 40px;
+		border: solid 3px black;
+		border-radius: 20px;
+		text-align:center;
+		background: lightgrey;
+	}
+	button{
+		margin: 30px;
+		padding: 10px;
+		font-family: verdana;
+	}
+	h2{
+		text-align: center;
+	}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script> 
+	$(document).ready(function(){
+		$("#boton_1").click(function(){
+			$("#texto").text("Y se puede reemplazar por otro");
+		});
+		$("#boton_2").click(function(){
+			$("#texto").html("<b>También por códigos HTML</b>");
+		});
+		$("#boton_3").click(function(){
+			$("#pagina").text("La web de Código Dallas");
+		});
+		$("#boton_4").click(function(){
+			$("#nombre").val("Lisandro");
+		});
+	});
+</script> 
+</head>
+<body>
+
+<h2>Todo puede ser modificado con la función Set</h2>
+
+<div>
+	<p id="texto">Tenemos éste texto</p>
+	<button id="boton_1">Escribir Texto</button>
+	<button id="boton_2">Escribir HTML</button>
+</div>
+
+<div>
+<a href="http://codigodallas.com" id="pagina">Código Dallas</a><br>
+<button id="boton_3">Reemplazar nombre del Link</button>
+</div>
+
+<div>
+<p>Nombre: <input id="nombre" type="text"></p>
+<button id="boton_4">Escribir nombre</button>
+</div>
+
+</body>
+</html>
+ 

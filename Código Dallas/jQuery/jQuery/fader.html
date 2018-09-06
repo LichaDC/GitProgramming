@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div{
+	margin:0px auto;
+	width:80px;height:80px;
+	color: ghostwhite;
+	text-align: center;
+}
+p{
+	padding-top: 35%;
+}
+button{
+	margin: 10px;
+	margin-right: 5px;
+	padding: 10px;
+}
+#caja_1{
+	background-color:gold;
+}
+#caja_2{
+	background-color:orange;
+}
+#caja_3{
+	background-color:orangered;
+}
+#caja_4{
+	background-color:tomato;
+}
+
+</style>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#entrada").click(function(){
+		$("#caja_1").fadeIn();
+		$("#caja_2").fadeIn("fast");
+		$("#caja_3").fadeIn("slow");
+		$("#caja_4").fadeIn(3000);
+	});
+	$("#salida").click(function(){	
+		$("#caja_1").fadeOut();
+		$("#caja_2").fadeOut("fast");
+		$("#caja_3").fadeOut("slow");
+		$("#caja_4").fadeOut(3000);
+	});
+});
+</script>
+</head>
+<body>
+
+<button id="entrada">Entrada</button>
+<button id="salida">Salida</button>
+
+<div id="caja_1"></div>
+<div id="caja_2"><p>Fast</p></div>
+<div id="caja_3"><p>Slow</p></div>
+<div id="caja_4"><p>3000</p></div>
+
+</body>
+</html>

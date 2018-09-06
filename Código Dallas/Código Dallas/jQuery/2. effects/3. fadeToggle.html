@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	div{
+		margin:0px auto;
+		width:80px;height:80px;
+	}
+	button{
+		margin: 10px;
+		margin-right: 5px;
+		padding: 10px;
+	}
+	#caja_1{
+		background-color:gold;
+	}
+	#caja_2{
+		background-color:orange;
+	}
+	#caja_3{
+		background-color:orangered;
+	}
+	#caja_4{
+		background-color:tomato;
+	}
+	#caja_5{
+		background-color:crimson;
+	}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	$("#palanca").click(function(){
+		$("#caja_1").fadeToggle(3000);
+		$("#caja_2").fadeToggle(2500);
+		$("#caja_3").fadeToggle(2000);
+		$("#caja_4").fadeToggle(1500);
+		$("#caja_5").fadeToggle(1000);	
+	});
+});
+</script>
+
+</head>
+<body>
+
+	<button id="palanca">Palanca</button>
+
+	<div id="caja_1"></div>
+	<div id="caja_2"></div>
+	<div id="caja_3"></div>
+	<div id="caja_4"></div>
+	<div id="caja_5"></div>
+</body>
+</html>

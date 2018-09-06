@@ -1,0 +1,52 @@
+<!--Lo mismo se puede hacer con las animaciones -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    div{
+    	width: 50%;
+        font-family: verdana;
+        border-radius: 5px
+    }
+    button{
+        margin: 10px;
+        margin-right: 5px;
+        padding: 10px;
+}
+    #titulo {
+        padding: 5px 50px;
+        background-color: steelblue;
+    }
+
+    #desplegable {
+        background-color: lightsteelblue;
+        padding: 30px 50px;
+        display: none;
+    }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script> 
+    $(document).ready(function(){
+        $("#titulo").click(function(){
+            $("#desplegable").slideDown(5000);
+        });
+        $("button").click(function(){
+            $("#desplegable").stop()
+        });
+    });
+</script>
+
+</head>
+<body>
+ 
+<button>Frená!</button>
+
+<div id="titulo"><h3>Apretame</h3></div>
+
+<div id="desplegable">Holaa!<div>
+
+</body>
+</html>

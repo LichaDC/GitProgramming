@@ -1,0 +1,5 @@
+print("¿Cómo te llamás?")
+nombre = raw_input()
+print("¿Cuál es tu edad?")
+edad = input()
+print("Un gusto conocerle,", nombre,"de", edad, "años")

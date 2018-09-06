@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	body{
+		font-family: verdana;
+	}
+	div{
+		width: 1000px; height: 50%;
+		margin: 30px auto;
+		padding: 40px;
+		border: solid 3px black;
+		border-radius: 20px;
+		text-align:center;
+		background: lightgrey;
+	}
+	button{
+		margin: 30px;
+		padding: 10px;
+		font-family: verdana;
+	}
+	h2{
+		text-align: center;
+	}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script> 
+	$(document).ready(function(){
+		$("#boton_1").click(function(){
+			alert($("#texto").text());
+		});
+		$("#boton_2").click(function(){
+			alert($("#texto").html());
+		});
+		$("#boton_3").click(function(){
+			alert($("#pagina").attr("href"));
+		});
+		$("#boton_4").click(function(){
+			alert("Hola " + $("#nombre").val());
+		});
+	});
+</script> 
+</head>
+<body>
+
+<h2>Hay 4 formas de obtener información con el método Get</h2>
+
+<div>
+	<p id="texto">De un texto, <b>se puede</b> averiguar...</p>
+	<button id="boton_1">Texto</button>
+	<button id="boton_2">HTML</button>
+</div>
+
+<div>
+<a href="http://codigodallas.com" id="pagina">Código Dallas</a><br>
+<button id="boton_3">Link</button>
+</div>
+
+<div>
+<p>Nombre: <input id="nombre" type="text"></p>
+<button id="boton_4">Saludar</button>
+</div>
+
+</body>
+</html>
+ 

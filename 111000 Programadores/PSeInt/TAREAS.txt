@@ -1,0 +1,10 @@
+                                     -----PSeInt-----
+
+TAREA PARA 09/08
+(1) Leer dos numeros y decir si estan ordenados de menor a mayor
+(2) leer tres numeros y decir si estan ordenados de menor a mayor
+(3) leer una lista de numeros, y saber si estan ordenados de menor a mayor
+
+TAREA PARA 16/08
+(4) Generalizar problema de la deuda para clientes indefinidos
+(5) Analizar en una lista indefinida si una lista está ordenada de menor a mayor usando el mientras

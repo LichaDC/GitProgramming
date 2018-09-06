@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	div{
+		background-color: lightsteelblue;
+		padding: 50px;
+		margin-top: 60px;
+		margin-left: auto;
+		margin-right:auto;
+		width: 50%;
+		text-align: center;
+		border: 5px solid indigo;
+		font-family: verdana light;
+		border-radius: 15px;
+		color: darkslateblue;
+	}
+	h2{
+		font-size: 100px
+	}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<!-- SE PUEDE HACER ALGO MÁS INTERESANTE, por ejemplo una carita así :/ que al tocarla se vuelva :) y cuando soltás se vuelva :( -->
+
+<script>
+
+$(document).ready(function(){
+    $("#illuminati").hover(function(){
+        alert("Entraste");
+    },
+    function(){
+        alert("Saliste");
+    }); 
+});
+</script>
+
+</head>
+
+<body>
+
+	<div id="illuminati">
+		<h2>▲</h2>
+		<h1>Yo lo sé todo<h1>
+	</div>
+
+</body>
+</html>

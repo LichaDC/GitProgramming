@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	body{
+		font-family: verdana;
+	}
+	div{
+		width: 50%;
+		margin: 30px auto;
+		padding: 40px;
+		border: solid 3px black;
+		border-radius: 20px;
+		text-align:center;
+		background: lightgrey;
+	}
+	button{
+		margin: 30px;
+		padding: 10px;
+		font-family: verdana;
+	}
+	.rojo{
+		color: red;
+	}
+	}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script> 
+	$(document).ready(function(){
+		$("#boton_1").click(function(){
+			$("h1").addClass("rojo");
+		});
+		$("#boton_2").click(function(){
+			$("h1").removeClass();
+		});
+		$("#boton_3").click(function(){
+			$("h1").toggleClass("rojo");
+		});
+	});
+</script> 
+</head>
+<body>
+
+<div>
+	<h1>Con jQuery se pueden manipular las clases</h1>
+</div>
+
+<center>
+<button id="boton_1">Agregar Clase</button>
+<button id="boton_2">Remover Clase</button>
+<button id="boton_3">Intercambiar Clase</button>
+</center>
+
+
+</body>
+</html>
+ 

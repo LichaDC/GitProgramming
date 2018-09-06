@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	div{
+	background:steelblue;
+	height:100px; width:100px;
+	position: relative;
+	margin: 30px;
+	opacity: 0.5;
+	float: left;
+	}
+	button{
+		margin: 30px;
+		padding: 10px;
+		font-family: verdana;
+	}
+	p{
+		padding-top: 15px;
+		padding-left: 30px;
+		font-family: verdana;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+    $("button").click(function(){
+    	// Tiempo que demora cada uno en arrancar.
+        $("#caja_1").animate({opacity: "0.5"}, 1000);
+        $("#caja_2").animate({opacity: "0.5"}, 2000);
+        $("#caja_3").animate({opacity: "0.5"}, 3000);
+        $("#caja_4").animate({opacity: "0.5"}, 4000);
+        $("#caja_5").animate({opacity: "0.5"}, 5000);
+        // Tiempo que demora cada uno en volverse sólido.
+        $("#caja_1").animate({opacity: "1"}, 500);
+        $("#caja_2").animate({opacity: "1"}, 500);
+        $("#caja_3").animate({opacity: "1"}, 500);
+        $("#caja_4").animate({opacity: "1"}, 500);
+        $("#caja_5").animate({opacity: "1"}, 500);
+        // Tiempo que demora cada uno en retomar la transparencia.
+        $("#caja_1").animate({opacity: "0.5"}, 500);
+        $("#caja_2").animate({opacity: "0.5"}, 500);
+        $("#caja_3").animate({opacity: "0.5"}, 500);
+        $("#caja_4").animate({opacity: "0.5"}, 500);
+        $("#caja_5").animate({opacity: "0.5"}, 500);
+    });
+});
+</script> 
+</head>
+<body>
+
+<p>Varios elementos</p>
+
+<button>Animar</button><br>
+
+<div id="caja_1"></div>
+<div id="caja_2"></div>
+<div id="caja_3"></div>
+<div id="caja_4"></div>
+<div id="caja_5"></div>
+
+</body>
+</html>
+ 

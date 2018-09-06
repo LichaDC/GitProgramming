@@ -1,0 +1,5 @@
+1. Agregar la carpeta de los scripts de python a las Path de windows
+2. Abrir cmd y escribir:
+	a) cd [la ruta de ésta carpeta]
+	b) pip install -r requirement.txt
+	c) run.py

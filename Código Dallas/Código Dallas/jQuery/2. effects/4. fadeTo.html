@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	div{
+		margin:10px auto;
+		width:80px;height:80px;
+		color: ghostwhite;
+		text-align: center;
+		border-radius: 50%;
+	}
+	button{
+		margin: 10px;
+		margin-right: 5px;
+		padding: 10px;
+	}
+	#rojo{
+		background-color:red;
+	}
+	#amarillo{
+		background-color:yellow;
+	}
+	#verde{
+		background-color:green;
+	}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	$("#frene").click(function(){
+		$("#rojo").fadeTo("slow", 1);
+		$("#amarillo").fadeTo("slow", 0.2);
+		$("#verde").fadeTo("slow", 0.2);
+	});
+	$("#precaucion").click(function(){
+		$("#rojo").fadeTo("slow", 0.2);
+		$("#amarillo").fadeTo("slow", 1);
+		$("#verde").fadeTo("slow", 0.2);
+	});
+	$("#pase").click(function(){
+		$("#rojo").fadeTo("slow", 0.2);
+		$("#amarillo").fadeTo("slow", 0.2);
+		$("#verde").fadeTo("slow", 1);
+	});
+});
+</script>
+
+</head>
+<body>
+
+	<button id="frene">Frene</button>
+	<button id="precaucion">Precaución</button>
+	<button id="pase">Pase</button>
+
+	<div id="rojo"></div>
+	<div id="amarillo"></div>
+	<div id="verde"></div>
+
+</body>
+</html>

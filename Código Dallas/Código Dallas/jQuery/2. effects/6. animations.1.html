@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	div{
+	background:steelblue;
+	height:200px; width:100px;
+	position:relative;
+	margin: 30px;;
+	}
+	button{
+		margin: 30px;
+		padding: 10px;
+		font-family: verdana;
+	}
+	p{
+		padding-top: 15px;
+		padding-left: 30px;
+		font-family: verdana;
+	}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script> 
+	$(document).ready(function(){
+	  $("button").click(function(){
+	    $("div").animate({left: "400px"});
+	  });
+	});
+</script> 
+</head>
+<body>
+
+<p>Todos los elementos de HTML tienen por defecto una posición "static". Para poder moverlos, tenemos que cambiarle esa propiedad por "relative", "fixed" o "absolute"</p>
+
+<button>Animar</button>
+
+<div></div>
+
+</body>
+</html>
+ 

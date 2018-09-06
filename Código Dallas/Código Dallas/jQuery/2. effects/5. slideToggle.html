@@ -1,0 +1,47 @@
+<!-- También existe el slideDown() y slideUp() -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+    $("#marca").click(function(){
+        $("#modelos").slideToggle("slow");
+    });
+});
+</script>
+
+<style>
+div{
+	width: 50%;
+    font-family: verdana;
+    border-radius: 5px
+}
+#marca {
+    padding: 5px 50px;
+    background-color: steelblue;
+}
+
+#modelos {
+    background-color: lightsteelblue;
+    padding: 30px 50px;
+    display: none;
+}
+p{
+	padding-bottom: 15px;
+}
+</style>
+</head>
+<body>
+ 
+<div id="marca"><h3>Chevrolet</h3></div>
+	<div id="modelos">
+		<p>Onix</p>
+		<p>Prisma</p>
+		<p>Cobalt</p>
+		<p>Cruze</p>
+	</div>
+
+</body>
+</html>

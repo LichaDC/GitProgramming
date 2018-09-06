@@ -1,0 +1,7 @@
+
+                                    -----ZinjaI-----
+
+TAREA PARA 24-08
+(6) Hacer programa que permita escribir el espesor de un papel, y al agregar la cantidad de veces que se dobla,
+te de la altura final
+(7) Lo mismo con un centavo por semana durante un año, que se duplique todas las semanas

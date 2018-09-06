@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	button{
+		margin: 30px;
+		padding: 10px;
+		font-family: verdana;
+	}
+	#contenedor{
+		height:200px; width:800px;
+	}
+	#caja_1, #caja_2{
+		background:steelblue;
+		height:200px; width:70px;
+	}
+	#caja_1{
+		float: left;
+	}
+	#caja_2{
+		float: right;
+	}
+	#pelota{
+	position: absolute;
+	background: orangered;
+	margin-left: 80px;
+	height:35px; width:35px;
+	border-radius: 17.5px; 
+	}	
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script> 
+	$(document).ready(function(){
+	  $("button").click(function(){
+	    $("#pelota").animate({left: "615px"}, "slow")
+        alert("La pelota llegó a destino");
+	  });
+	});
+</script> 
+</head>
+<body>
+
+<button id="button">Animar</button>
+
+	<div id="contenedor">
+		<div id="caja_1"></div>
+		<div id="pelota"></div>
+		<div id="caja_2"></div>
+	</div>
+
+</body>
+</html>
+ 

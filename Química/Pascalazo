@@ -1,0 +1,139 @@
+program TP2;
+uses crt;
+var i, eleccion, numero, decimal: integer;
+var binario: array[1..8] of integer;
+var num:     array[1..4] of integer;
+Procedure Juegos;
+BEGIN
+     writeln('Juegos');
+END;
+
+
+Procedure Calculos;
+BEGIN
+     writeln('Escribi un numero');
+     readln(numero);
+     WHILE (numero < 0) or (numero > 9999) DO
+     BEGIN
+           writeln('Numero invalido, ingrese un valor entre 0 y 9999');
+           readln(numero);
+     END;
+
+     num[1] := numero MOD 10;
+     num[2] := numero MOD 100  - num[1];
+     num[3] := numero MOD 1000 - num[1] - num[2];
+     num[4] := numero          - num[1] - num[2] - num[3];
+
+     CASE num[4] OF
+          1000: write('Mil '       );
+          2000: write('Dos mil '   );
+          3000: write('Tres mil'   );
+          4000: write('Cuatro mil ');
+          5000: write('Cinco mil ' );
+          6000: write('Seis mil '  );
+          7000: write('Siete mil ' );
+          8000: write('Ocho mil '  );
+          9000: write('Nueve mil ' );
+     END;
+
+
+     CASE num[3] OF
+          100:
+          BEGIN
+               IF (num[2] <> 0) and (num[1] <> 0) THEN
+                   write('ciento '       );
+               ELSE
+                   write('cien');
+          END;
+          200: write('doscientos '   );
+          300: write('trescientos '  );
+          400: write('cuatrocientos ');
+          500: write('quinientos '   );
+          600: write('seiscientos '  );
+          700: write('setecientos '  );
+          800: write('ochocientos '  );
+          900: write('novecientos '  );
+     END;
+
+     CASE num[2] OF
+          10:
+          BEGIN
+               IF num[1] > 5 THEN
+                   write('dieci');
+               ELSE
+                   CASE num[1] OF
+                        1: write('once'   );
+                        2: write('doce'   );
+                        3: write('trece'  );
+                        4: write('catorce');
+                        5: write('quince' );
+                   END,
+          END;
+          20: write('veinti'    );
+          30: write('treinta '  );
+          40: write('cuarenta ' );
+          50: write('cincuenta ');
+          60: write('sesenta '  );
+          70: write('setenta '  );
+          80: write('ochenta '  );
+          90: write('noventa '  );     END;
+     END;
+     IF  (num[2] >=30) and (num[1] = 0) THEN
+         write('y ');
+
+     CASE num[1] OF
+          1: IF num[2] <> 1 THEN write('uno'   );
+          2: IF num[2] <> 1 THEN write('dos'   );
+          3: IF num[2] <> 1 THEN write('tres'  );
+          4: IF num[2] <> 1 THEN write('cuatro');
+          5: IF num[2] <> 1 THEN write('cinco' );
+          6: write('seis' );
+          7: write('siete');
+          8: write('ocho' );
+          9: write('nueve');
+     END;
+END;
+
+
+Procedure Codigo;
+BEGIN
+     writeln('Escribi un numero');
+     readln(numero);
+     WHILE (numero < 0) or (numero > 9) DO
+     BEGIN
+           writeln('Numero invalido, ingrese un valor entre 0 y 9');
+           readln(numero);
+     END;
+     decimal := ord(numero + 48);
+     writeln(decimal);
+     FOR i := 1 TO 8 DO
+     BEGIN
+          binario[i]:= decimal MOD 2;
+          decimal  := decimal DIV 2;
+     END;
+     FOR i :=8 DOWNTO 1 DO
+         write(binario[i]);
+
+END;
+
+BEGIN
+        writeln('1) Juegos');
+        writeln('2) Calculos');
+        writeln('3) Codigo de Barras');
+        writeln('4) Fin');
+
+        readln(eleccion);
+        while (eleccion < 1) or (eleccion > 4) DO
+        BEGIN
+              writeln('Valor invalido, intente de nuevo');
+              readln(eleccion);
+        END;
+        clrscr;
+        CASE eleccion OF
+             1: Juegos;
+             2: Calculos;
+             3: Codigo;
+        END;
+
+        readkey;
+END.

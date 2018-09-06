@@ -1,0 +1,44 @@
+int hombres_AA=0;
+int hombres_Aa=0;
+int hombres_aa=0;
+int mujeres_AA=0;
+int mujeres_Aa=0;
+int mujeres_aa=0;
+
+void cambiarGeneración(){
+
+//Hijos de H_AA y M_AA
+	int nuevos_AA= ( 2* hombres_AA )*( 2* mujeres_AA );
+
+//Hijos de H_aa y M_aa
+	int nuevos_aa= ( 2* hombres_aa )*( 2* mujeres_aa );
+	
+//Hijos de H_AA y M_aa
+	int nuevos_Aa= ( hombres_AA * mujeres_aa )
+
+//Hijos de H_aa y M_AA
+	nuevos_Aa= nuevos_Aa + ( hombres_aa * mujeres_AA )
+
+//Hijos de H_Aa y M_aa
+	nuevos_Aa= nuevos_Aa + ( hombres_Aa * mujeres_aa ) / 2;
+	nuevos_aa= nuevos_aa + ( hombres_Aa * mujeres_aa ) / 2;
+
+//Hijos de H_aa y M_Aa
+	nuevos_Aa= nuevos_Aa + ( hombres_aa * mujeres_Aa ) / 2;
+	nuevos_aa= nuevos_aa + ( hombres_aa * mujeres_Aa ) / 2;
+
+//Hijos de H_Aa y M_Aa
+	nuevos_Aa= nuevos_Aa + ( hombres_Aa * mujeres_Aa ) / 2;
+	nuevos_AA= nuevos_AA + ( hombres_Aa * mujeres_Aa ) / 4;
+	nuevos_aa= nuevos_aa + ( hombres_Aa * mujeres_Aa ) / 4;
+
+hombres_AA= hombres_AA + ( nuevos_AA / 2 );
+hombres_Aa= hombres_Aa + ( nuevos_Aa / 2 );
+hombres_aa= hombres_aa + ( nuevos_aa / 2 );
+mujeres_AA= mujeres_AA + ( nuevos_AA / 2 );
+mujeres_Aa= mujeres_Aa + ( nuevos_Aa / 2 );
+mujeres_aa= mujeres_aa + ( nuevos_aa / 2 );
+
+
+
+}
