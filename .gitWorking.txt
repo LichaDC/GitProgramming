@@ -1,5 +1,13 @@
 1) Download and install Git https://git-scm.com/
-2) Open git CMD and go to the local future repository location.
-3) Create an online repository and copy the information of "...or create a new repository on the command line".
-4) Paste in the git CMD and wait.
-5) 
+2) Open git CMD and go to the local future repository location. (to change disc write h: [h is the name of the drive])
+3) In atom press "Create Repository" in the Git tab.
+4) Add to the first of  /.git/config the next:
+    [remote "origin"]
+    url = "https://github.com/LichaDC/GitProgramming"
+
+    [branch "master"]
+        remote = origin
+        merge = refs/heads/master
+
+5) Create an online repository and copy the information of "...or create a new repository on the command line".
+6) Paste in the git CMD, press enter and and wait.
