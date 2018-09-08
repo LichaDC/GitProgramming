@@ -16,7 +16,7 @@ months = {
 '12': '12 Diciembre'
 }
 
-scheme = "'IMG-{} {} {} - {}.JPG'.format(d[0], d[1], d[2], f'{i:04}')"
+schemeP = "'IMG-{} {} {} - {}{}'.format(d[0], d[1], d[2], f'{i:04}', ext)"
 
 def monthToNum(shortMonth):
     return{
@@ -75,30 +75,14 @@ def newer(path1, path2): # is path1 newer than path2 ?
             return False
 
 
-def moveToDir(path, file):
-    pathFile = os.path.join(path, file)
-    d = date(pathFile)
-    if not os.getcwd().endswith('/{}/{}'.format(d[0], months[d[1]])): # Check if the file is not in the right directory
-        if not os.path.isdir(os.path.join(directory, d[0], months[d[1]])): # Check if the righ directory doesn't exist
-            print('[ ■ ] - I created the directory', os.path.join(d[0], months[d[1]]))
-            os.makedirs(os.path.join(directory, d[0], months[d[1]])) # Creates the directory
-        i = 1
-        while True:
-            if not os.path.isfile(os.path.join(directory, d[0], months[d[1]],(eval(scheme)))): # Check if temporal name is not taken
-                print('[ → ] MOV - I renamed', file, '       by       ', (eval(scheme)))
-                os.rename(pathFile, os.path.join(directory, d[0], months[d[1]], (eval(scheme)))) # Rename the file to the temporal name
-                break
-            else:
-                i += 1
-
-def changeName(path, file):
+def changeName(path, file, ext):
     pathFile = os.path.join(path, file)
     d = date(pathFile)
     i = 1
     while True:
-        correctName = os.path.join(path, eval(scheme))
+        correctName = os.path.join(path, eval(schemeP))
         if not os.path.isfile(correctName): # Check if doesn't exists a file with the correct name.
-            print('[ → ] - I renamed', file, '       by       ', eval(scheme))
+            print('[ → ] - I renamed', file, '       by       ', eval(schemeP))
             os.replace(pathFile, correctName)
             break
         elif correctName == pathFile:
@@ -108,52 +92,34 @@ def changeName(path, file):
             if newer(correctName, pathFile): # Check if it's older than the correct named file. (correctName is newer)
                 j = 1
                 while True:
-                    if not os.path.isfile(os.path.join(path, '{}-{}.JPG'.format(eval(scheme)[:-4], j))): # Check if the temporal name doesn't exist
-                        print('[ → ] - I renamed', eval(scheme), '       by        {}-{}.JPG'.format(eval(scheme)[:-4], j))
-                        os.replace(correctName, os.path.join(path, '{}-{}.JPG'.format(eval(scheme)[:-4], j))) # Give temporal name to the correct named file
+                    if not os.path.isfile(os.path.join(path, '{}-{}{}'.format(eval(schemeP)[:-4], j, ext))): # Check if the temporal name doesn't exist
+                        print('[ → ] - I renamed', eval(schemeP), '       by        {}-{}{}'.format(eval(schemeP)[:-4], j, ext))
+                        os.replace(correctName, os.path.join(path, '{}-{}{}'.format(eval(schemeP)[:-4], j, ext))) # Give temporal name to the correct named file
                         global unordered
                         unordered = True
                         break
                     j += 1
-                print('[ → ] - I renamed', file, '       by       ', eval(scheme))
+                print('[ → ] - I renamed', file, '       by       ', eval(schemeP))
                 os.replace(pathFile, correctName)
                 break
             else:
                 i += 1
 
-
 # --- MAIN --- #
 
 directory = os.getcwd()
-
-for dirpath, dirnames, filenames in os.walk(directory):
-    for dir in filenames:
-        if dir[-4:] == '.JPG' or dir[-4:] == '.jpg':
-            moveToDir(dirpath, dir)
-print()
-print("| ----- - -----[       Everyone it's  in its folder       ]----- - ----- |")
-
 
 unordered = True
 while unordered:
     unordered = False
     for dirpath, dirnames, filenames in os.walk(directory):
         for dir in filenames:
-            if dir[-4:] == '.JPG' or dir[-4:] == '.jpg':
+            if dir[-4:] == '.JPG' or dir[-4:] == '.jpg' or dir[-4:] == '.MPG' or dir[-4:] == '.mpg':
+                if dir[-4:] == '.JPG' or dir[-4:] == '.jpg':
+                    ext = '.JPG'
+                else:
+                    ext = '.MPG'
                 if not unordered:
-                    changeName(dirpath, dir)
+                    changeName(dirpath, dir, ext)
 print()
-print("| ----- - -----[     Every photo has the correct name     ]----- - ----- |")
-
-
-for dirpath, dirnames, filenames in os.walk(directory):
-    if not filenames and not dirnames:
-        os.removedirs(dirpath)
-        print('[ X ] - I deleted the folder', dirpath)
-print()
-print("| ----- - -----[   Every empty folder have been deleted   ]----- - ----- |")
-
-
-print()
-print()
-print("| ----- - -----[        I FINISHED. IT'S ALL RIGHT        ]----- - ----- |")
+print("| ----- - -----[     Every photo and video has the correct name     ]----- - ----- |")
