@@ -75,8 +75,8 @@ def newer(path1, path2): # is path1 newer than path2 ?
             return False
 
 
-def changeName(path, file, ext):
-    pathFile = os.path.join(path, file)
+def changeName(pathFile, ext):
+    path, file = os.path.split(pathFile)
     d = date(pathFile)
     i = 1
     while True:
@@ -112,16 +112,16 @@ directory = os.getcwd()
 unordered = True
 while unordered:
     unordered = False
-    for dirpath, dirnames, filenames in os.walk(directory):
-        for dir in filenames:
-            if dir[-4:] == '.JPG' or dir[-4:] == '.jpg' or dir[-4:] == '.MPG' or dir[-4:] == '.mpg':
-                if dir[-4:] == '.JPG' or dir[-4:] == '.jpg':
-                    ext = '.JPG'
-                else:
-                    ext = '.MPG'
-                if not unordered:
-                    changeName(dirpath, dir, ext)
-                else:
-                    break
+    for dir in os.scandir(directory):
+        dir = dir.path
+        if dir[-4:] == '.JPG' or dir[-4:] == '.jpg' or dir[-4:] == '.MPG' or dir[-4:] == '.mpg':
+            if dir[-4:] == '.JPG' or dir[-4:] == '.jpg':
+                ext = '.JPG'
+            else:
+                ext = '.MPG'
+            if not unordered:
+                changeName(dir, ext)
+            else:
+                break
 print()
 print("| ----- - -----[     Every photo and video has the correct name     ]----- - ----- |")
