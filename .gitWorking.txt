@@ -1,0 +1,5 @@
+1) Download and install Git https://git-scm.com/
+2) Open git CMD and go to the local future repository location.
+3) Create an online repository and copy the information of "...or create a new repository on the command line".
+4) Paste in the git CMD and wait.
+5) 
