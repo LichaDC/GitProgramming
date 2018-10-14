@@ -1,0 +1,47 @@
+<button onclick="show()">Click Me</button>
+
+<script>
+    // EVENTS //
+    onclick // When the user clicks on an element.
+    onload // When an objet has loaded.
+    onunload // Occurs once has unloaded (for <body>)
+    onchange // When the content of a form element, the selection or the checked state have changed
+             // (for <input>, <keygen>, <select>, and <textarea>)
+    onmouseover // When the pointer is moved onto an elemen, or onto one of its children
+    onmouseout // When a user moves the mouse out of an element.
+    onmousedown // When a user presses a mouse button over an element.
+    onmouseup // When a user releases a mouse button over an element.
+    onblur // When an elementloses focus
+    onfocus // When an element gets focus
+
+    // Examples
+    window.onload = function() // Run after the whole page is loaded.
+    <body onload="function()"> //  Run after the body is loaded.
+
+    function show() {
+      alert("Hi there");
+    }
+
+    var x = document.getElementById("demo");
+    x.onclick = function () {
+      document.body.innerHTML = Date();
+    }
+
+    // EVENT HANDLERS //
+    //  !! Event without "on-" !! 
+    addEventListener(event, function, useCapture); // The third parameter is a Boolean value specifying whether to use event bubbling or event capturing
+                                                   // Bubbling = Inner first, then outer - Capturing = Outer first, then inner.
+                                                   // true = Capturing - false = Bubbling
+    removeEventListener(event, function);
+    // Examples
+    element.addEventListener("click", myFunction); // Adds firt event listener
+    element.addEventListener("mouseover", myFunction); // Adds second event listener
+    function myFunction() {
+    alert("Hello World!");
+    }
+    element.removeEventListener("mouseover", myFunction); // Remove specified event listener
+
+
+</script>
+
+<p onclick="someFunc()">some text</p>

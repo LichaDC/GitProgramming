@@ -1,6 +1,5 @@
 1) Download and install Git https://git-scm.com/
-2) Open git CMD and go to the local future repository location. (to change disc write h: [h is the name of the drive])
-3) In atom press "Create Repository" in the Git tab.
+2) Open git CMD and cd to the local future repository location. (to change disc write h: [h is the name of the drive])
 4) Add to the first of  /.git/config the next:
     [remote "origin"]
     url = "https://github.com/LichaDC/GitProgramming"

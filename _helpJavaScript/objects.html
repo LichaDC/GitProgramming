@@ -1,0 +1,39 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            // NEW OBJECT
+            var person = {
+                name: "John", age: 31,
+                favColor: "green", height: 183
+            };
+            document.write(person.favColor)
+            document.write(person[favColor])
+            // NEW OBJECT TYPE
+            function person(name, age, color) {
+                this.name = name;
+                this.age = age;
+                this.favColor = color;
+            }
+            var p1 = new person("John", 42, "green");
+            var p2 = new person("Amy", 21, "red");
+            // OBJECT LITERAL
+            var John = {name: "John", age: 25};
+            var James = {name: "James", age: 21};
+
+            // METHODS
+            function person(name, age) {
+                this.name = name;
+                this.age = age;
+                this.changeName = function (name) {
+                    this.name = name;
+                }
+            }
+
+            var p = new person("David", 21);
+            p.changeName("John");
+            //Now p.name equals to "John"
+       </script>
+    </body>
+</html>

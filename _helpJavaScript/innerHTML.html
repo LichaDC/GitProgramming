@@ -1,0 +1,41 @@
+<img id="myimg" src="orange.png" alt="" />
+<a href="http://www.example.com">Some link</a>
+<div id ="demo">some content</div>
+
+<script>
+    // FIND ELEMENTS // - Finds all elements by class name and returns them as an array.
+    document.getElementById(id)
+    document.getElementsByClassName(name)
+    document.getElementsByTagName(name)
+
+    // REPLACE ELEMENTS //
+    document.body.innerHTML = "Some text"; // Replace everything in the body.
+    // Examples 1
+    var el = document.getElementById("myimg");
+    el.src = "apple.png"; // Replace the element found by ID.
+    // Examples 2
+    var el = document.getElementsByTagName("a");
+    el[0].href = "http://www.sololearn.com"; // Raplace the element in the position gived.
+
+    // CREATE ELEMENTS //
+    element.cloneNode() // Clones an element and returns the resulting node.
+    document.createElement(element) // Creates a new element node.
+    document.createTextNode(text) // Creates a new text node.
+    element.insertBefore(node1, node2) // Inserts node1 as a child before node2.
+    parent.removeChild(child); // Removes the element child from parent.
+    parent.appendChild(node); // Append node to parent
+    parent.replaceChild(newChild, oldChild); // Replace the oldChild by the newChild
+    // Example
+    var p = document.createElement("p"); // Create a new paragraph.
+    var node = document.createTextNode("Some new text");  // Create a new text node.
+    p.appendChild(node); // Add the text to the paragraph.
+    var div = document.getElementById("demo");
+    div.appendChild(p); // Add the paragraph to the div.
+
+</script>
+
+
+    var arr
+    arr.length
+
+</script>
