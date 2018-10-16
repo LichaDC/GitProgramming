@@ -13,3 +13,13 @@ CHAR(M) - Fixed-length character string. Size is specified in parenthesis. Max 2
 VARCHAR(M) - Variable-length character string. Max size is specified in parenthesis.
 BLOB - "Binary Large Objects" and are used to store large amounts of binary data, such as images or other types of files.
 TEXT - Large amount of text data.
+
+-- OPERATORS --
+=
+!= -- or <> in somes types.
+<
+>
+<=
+>=
+BEETWEEN -- WHERE column BEETWEEN valu1 AND value2
+IS NULL -- WHERE column IS NULL
